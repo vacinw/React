@@ -1,0 +1,86 @@
+@import 'normalize.css';
+
+:root {
+    --primary: #fe2c55;
+    --back: #000;
+    --white: #fff;
+    --text-color: #333;
+
+    //font
+    --font-family: 'TikTokFont', sans-serif;
+
+    //layout
+    --default-layout-header-height: 60px;
+    --default-layout-width: 1150px;
+    --default-layout-horizontal-spacer: 24px;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizespeed;
+    color: var(--text-color);
+    overflow-y: overlay;
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+// fonts
+@font-face {
+    font-family: TikTokDisplayFont;
+    src: ('/assets/fonts/TikTokDisplayFont-Bold.woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: TikTokDisplayFont;
+    src: ('/assets/fonts/TikTokDisplayFont-Semibold.woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: TikTokFont;
+    src: ('/assets/fonts/TikTokFont-Regular.woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: TikTokFont;
+    src: ('/assets/fonts/TikTokFont-Semibold.woff2');
+    font-weight: 600;
+}
+
+// tippy
+body .tippy-box {
+    background-color: #333;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+
+    .tippy-arrow {
+        color: #333;
+    }
+
+    .tippy-content {
+        padding: 8px 9px;
+    }
+}

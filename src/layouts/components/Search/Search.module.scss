@@ -1,0 +1,89 @@
+.search-title {
+    padding-left: 16px;
+    color: #999;
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.search-result,
+.search {
+    width: 361px;
+}
+
+.search {
+    font-family: 'TikTokFont', sans-serif;
+    height: var(--search-height);
+    background-color: rgba(22 24 35 / 0.06);
+    border-radius: var(--search-border-radius);
+    padding-left: 16px;
+    display: flex;
+    position: relative;
+    border: 1.5px solid transparent;
+
+    input {
+        flex: 1;
+        height: 100%;
+        color: var(--black);
+        font-size: 16px;
+        background-color: transparent;
+        caret-color: lightcoral;
+        padding-right: 40px;
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: var(--text-color);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: calc(var(--search-height) - var(--search-top) * 2);
+        background-color: #ccc;
+        width: 1px;
+        top: var(--search-top);
+        right: var(--search-btn-width);
+    }
+
+    &:focus-within {
+        border-color: #999;
+    }
+}
+
+.clear,
+.loading {
+    color: #999;
+    position: absolute;
+    right: calc(var(--search-btn-width) + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.loading {
+    animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.search-btn {
+    width: var(--search-btn-width);
+    height: 100%;
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+    font-size: 1.8rem;
+    color: #999;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(22 24 35 / 0.03);
+    }
+
+    &:active {
+        background-color: rgba(22 24 35 / 0.06);
+    }
+}
